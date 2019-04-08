@@ -5,7 +5,6 @@ var videoSphere;
 //var controls;
 
 var intro; // mesh for intro panoramic
-//var introLength = 1000 // 5*60*60;
 
 var mouse = new THREE.Vector2(),
     INTERSECTED;
@@ -56,30 +55,6 @@ function setTheScene() {
 }
 
 
-
-function createMeshA() {
-    var geometry, material;
-
-    geometry = new THREE.PlaneGeometry(20, 10);
-
-    //geometry = new THREE.SphereGeometry(10, 32, 16);
-    //material =  new THREE.MeshStandardMaterial({ color: 0xffffff, flatShading:true });
-    //geometry = new THREE.BoxGeometry( 20, 20, 20 );
-    material = new THREE.MeshStandardMaterial({
-        color: 0xff88ff,
-        wireframe: false
-    });
-
-
-    mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(0, 10, -50);
-    //mesh.position.copy(new THREE.Vector3(0, 20, -200));
-    scene.add(mesh);
-
-    hotspots.push(mesh)
-}
-
-
 function createHotspots() {
 
     // audio
@@ -88,11 +63,6 @@ function createHotspots() {
     camera.add(listener);
 
     var boxGeom = new THREE.CubeGeometry(60, 100, 60);
-    //var boxGeom = new THREE.PlaneGeometry(20, 10);
-
-
-    var hotspotAudio = []
-
 
     audioLoader.load('assets/audio/beach/waves.mp3', function (buffer) { //
         let hotspot = new THREE.Mesh(boxGeom, new THREE.MeshStandardMaterial({
@@ -264,7 +234,6 @@ function createPanorama() {
     scene.add( intro );
 
     */
-
 }
 
 
@@ -287,7 +256,6 @@ function onClick(event) {
 }
 
 /* function fadeInVideo(){
-    console.log('fadeInVideo')
     TweenLite.to(videoSphere.material, 5, {opacity: 1});
 } */
 
@@ -316,21 +284,7 @@ function animate() {
 
 function render() {
 
-   /* if(intro && initialised){
-        if(introLength > 0){
-            intro.material.opacity = (introLength) / 1000; // 1 + Math.sin(new Date().getTime() * .0025);
-            introLength--;
-            console.log(introLength, intro.material.opacity)
-        }
-
-    }*/
-
     //if(!renderer.vr.enabled) controls.update();
-
-    // mesh.rotation.x += 0.005;
-    // mesh.rotation.y += 0.005;
-
-   // controls.update();
 
     // update the picking ray with the camera and mouse position
     raycaster.setFromCamera(mouse, camera);
@@ -361,14 +315,8 @@ function render() {
             let audio = INTERSECTED.children[ 0 ];
            // audio.setVolume(0.2);
             audio.gain.gain.linearRampToValueAtTime(0.2, audio.context.currentTime + 1);
-            // console.log(INTERSECTED)
         } 
         INTERSECTED = null;
-
-        // hotspots.forEach(hotspot => {
-        //     // hotspot.addEventListener('transitionend', removeTransition)
-        // });
-
      
     }
 

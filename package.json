@@ -1,7 +1,7 @@
 {
   "name": "reachouttouchspace",
   "version": "1.0.0",
-  "description": "DemVR Hackathon project 2019",
+  "description": "DemVR Hackathon 2019: SenseSpace  - a sensory VR project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
-    "gaze-event": "^2.0.5",
     "socket.io": "^2.2.0",
     "three": "^0.103.0"
   }
