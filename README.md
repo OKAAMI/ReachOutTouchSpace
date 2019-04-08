@@ -1,5 +1,3 @@
 "# ReachOutTouchSpace" 
 
-SenseScape : A demo project producted during DemVR Newcastle 2019
-
-A sensory WebVr project.
+DemVR Hackathon 2019: SenseSpace  - a sensory WebVR project for people with demetia

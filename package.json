@@ -1,7 +1,7 @@
 {
   "name": "reachouttouchspace",
   "version": "1.0.0",
-  "description": "DemVR Hackathon 2019: SenseSpace  - a sensory VR project",
+  "description": "DemVR Hackathon 2019: SenseSpace  - a sensory VR project for people with demetia",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
